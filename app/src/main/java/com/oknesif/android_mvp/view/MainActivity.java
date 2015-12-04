@@ -1,13 +1,13 @@
-package com.oknesif.mvptest.view;
+package com.oknesif.android_mvp.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.oknesif.mvptest.R;
-import com.oknesif.mvptest.model.DataManagerImpl;
-import com.oknesif.mvptest.model.DataManager;
-import com.oknesif.mvptest.presenter.Presenter;
-import com.oknesif.mvptest.presenter.PresenterImpl;
+import com.oknesif.android_mvp.R;
+import com.oknesif.android_mvp.model.DataManagerImpl;
+import com.oknesif.android_mvp.model.DataManager;
+import com.oknesif.android_mvp.presenter.Presenter;
+import com.oknesif.android_mvp.presenter.PresenterImpl;
 
 public class MainActivity extends AppCompatActivity {
 

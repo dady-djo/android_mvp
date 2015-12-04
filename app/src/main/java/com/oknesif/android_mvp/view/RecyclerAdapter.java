@@ -1,4 +1,4 @@
-package com.oknesif.mvptest.view;
+package com.oknesif.android_mvp.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.oknesif.mvptest.R;
-import com.oknesif.mvptest.model.AdapterDataModel;
+import com.oknesif.android_mvp.R;
+import com.oknesif.android_mvp.model.AdapterDataModel;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.TitleHolder> {
 

@@ -1,4 +1,4 @@
-package com.oknesif.mvptest.model;
+package com.oknesif.android_mvp.model;
 
 public interface DataManager<T> {
 

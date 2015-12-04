@@ -1,13 +1,13 @@
-package com.oknesif.mvptest.presenter;
+package com.oknesif.android_mvp.presenter;
 
 import android.os.Bundle;
 
-import com.oknesif.mvptest.model.AdapterDataModel;
-import com.oknesif.mvptest.model.DataManager;
-import com.oknesif.mvptest.model.OnDataManagerCallback;
-import com.oknesif.mvptest.objects.Entity;
-import com.oknesif.mvptest.view.OnEntityClickListener;
-import com.oknesif.mvptest.view.ViewModel;
+import com.oknesif.android_mvp.model.AdapterDataModel;
+import com.oknesif.android_mvp.model.DataManager;
+import com.oknesif.android_mvp.model.OnDataManagerCallback;
+import com.oknesif.android_mvp.objects.Entity;
+import com.oknesif.android_mvp.view.OnEntityClickListener;
+import com.oknesif.android_mvp.view.ViewModel;
 
 import java.util.List;
 

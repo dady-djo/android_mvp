@@ -1,4 +1,4 @@
-package com.oknesif.mvptest.presenter;
+package com.oknesif.android_mvp.presenter;
 
 import android.os.Bundle;
 

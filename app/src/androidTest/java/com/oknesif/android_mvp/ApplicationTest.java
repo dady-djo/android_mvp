@@ -1,4 +1,4 @@
-package com.oknesif.mvptest;
+package com.oknesif.android_mvp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

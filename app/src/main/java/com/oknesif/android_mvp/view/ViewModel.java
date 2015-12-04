@@ -1,6 +1,6 @@
-package com.oknesif.mvptest.view;
+package com.oknesif.android_mvp.view;
 
-import com.oknesif.mvptest.model.AdapterDataModel;
+import com.oknesif.android_mvp.model.AdapterDataModel;
 
 public interface ViewModel {
 

@@ -1,6 +1,6 @@
-package com.oknesif.mvptest.model;
+package com.oknesif.android_mvp.model;
 
-import com.oknesif.mvptest.objects.Entity;
+import com.oknesif.android_mvp.objects.Entity;
 
 import java.util.ArrayList;
 import java.util.List;

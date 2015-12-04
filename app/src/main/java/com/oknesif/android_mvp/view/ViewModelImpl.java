@@ -1,4 +1,4 @@
-package com.oknesif.mvptest.view;
+package com.oknesif.android_mvp.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.oknesif.mvptest.R;
-import com.oknesif.mvptest.model.AdapterDataModel;
+import com.oknesif.android_mvp.R;
+import com.oknesif.android_mvp.model.AdapterDataModel;
 
 public class ViewModelImpl implements ViewModel {
 

@@ -1,4 +1,4 @@
-package com.oknesif.mvptest;
+package com.oknesif.android_mvp;
 
 import org.junit.Test;
 

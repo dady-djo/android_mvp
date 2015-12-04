@@ -1,4 +1,4 @@
-package com.oknesif.mvptest.model;
+package com.oknesif.android_mvp.model;
 
 import java.util.List;
 

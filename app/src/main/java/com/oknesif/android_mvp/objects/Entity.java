@@ -1,4 +1,4 @@
-package com.oknesif.mvptest.objects;
+package com.oknesif.android_mvp.objects;
 
 public class Entity {
     private String title;
