@@ -1,0 +1,22 @@
+*.iml
+.idea
+*/target
+**/**/target
+*/gen
+*/*.iml
+*/*/gen-external-apklibs
+*.MF
+BuildConfig.java
+Manifest.java
+R.java
+.DS_Store
+classes
+out
+
+# gradle local files
+/captures
+*.properties
+.gradle
+build
+
+lazada-android-dev
