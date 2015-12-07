@@ -17,11 +17,30 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+    }
+
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile('org.roboguice:roboguice:3.0.1') {
+        exclude module: 'aopalliance'
+        exclude module: 'cglib'
+    }
+    compile('com.google.inject.extensions:guice-assistedinject:4.0') {
+        exclude module: 'aopalliance'
+        exclude module: 'guice'
+        exclude module: 'cglib'
+    }
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:recyclerview-v7:23.1.0'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.google.guava:guava:18.0'
 }

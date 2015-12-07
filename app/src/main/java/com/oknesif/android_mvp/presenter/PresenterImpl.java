@@ -2,6 +2,8 @@ package com.oknesif.android_mvp.presenter;
 
 import android.os.Bundle;
 
+import com.google.inject.assistedinject.Assisted;
+import com.google.inject.assistedinject.AssistedInject;
 import com.oknesif.android_mvp.model.AdapterDataModel;
 import com.oknesif.android_mvp.model.DataManager;
 import com.oknesif.android_mvp.model.OnDataManagerCallback;
@@ -14,11 +16,12 @@ import java.util.List;
 public class PresenterImpl implements Presenter, OnEntityClickListener {
 
     private ViewModel viewModel;
-    private DataManager dataManager;
+    private DataManager<Entity> dataManager;
 
     private AdapterDataModel adapterDataModel;
 
-    public PresenterImpl(ViewModel model, DataManager manager) {
+    @AssistedInject
+    public PresenterImpl(@Assisted ViewModel model, DataManager<Entity> manager) {
         this.viewModel = model;
         this.dataManager = manager;
     }
