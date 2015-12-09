@@ -75,7 +75,7 @@ public class PresenterTest {
 
         // Testing onSuccess callback
         mOnDataManagerCallbackArgumentCaptor.getValue().onSuccess(ENTITIES);
-        assertThat(adapterDataModel.getSize(), is(ENTITIES.size()));
+        assertThat(adapterDataModel.getEntities(), is(ENTITIES));
         verify(mViewModel).updateList();
 
         // Testing onError callback
