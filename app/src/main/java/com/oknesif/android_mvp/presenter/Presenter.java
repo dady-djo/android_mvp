@@ -6,6 +6,7 @@ public interface Presenter {
 
     void onCreate(Bundle bundle);
 
-    void onPause();
+    void handleOnResume();
 
+    void handleOnPause();
 }

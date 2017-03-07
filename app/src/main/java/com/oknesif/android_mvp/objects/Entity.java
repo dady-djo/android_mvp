@@ -1,28 +1,26 @@
 package com.oknesif.android_mvp.objects;
 
 public class Entity {
-    private String title;
-    private int value;
+    private final int id;
+    private final String name;
+    private final int age;
 
 
-    public Entity(String title, int value) {
-        this.title = title;
-        this.value = value;
+    public Entity(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getAge() {
+        return age;
     }
 
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
+    public int getId() {
+        return id;
     }
 }

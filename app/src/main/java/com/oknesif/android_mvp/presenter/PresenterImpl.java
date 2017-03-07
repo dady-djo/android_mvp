@@ -2,59 +2,51 @@ package com.oknesif.android_mvp.presenter;
 
 import android.os.Bundle;
 
-import com.oknesif.android_mvp.model.AdapterDataModel;
-import com.oknesif.android_mvp.model.DataManager;
-import com.oknesif.android_mvp.model.OnDataManagerCallback;
+import com.oknesif.android_mvp.model.Interactor;
+import com.oknesif.android_mvp.model.ModelAdapterImpl;
 import com.oknesif.android_mvp.objects.Entity;
 import com.oknesif.android_mvp.view.OnEntityClickListener;
-import com.oknesif.android_mvp.view.ViewModel;
+import com.oknesif.android_mvp.view.View;
 
 import java.util.List;
 
-public class PresenterImpl implements Presenter, OnEntityClickListener {
+public class PresenterImpl implements Presenter, OnEntityClickListener, Interactor.DataSubscriber {
 
-    private ViewModel viewModel;
-    private DataManager dataManager;
+    private View view;
+    private Interactor interactor;
 
-    private AdapterDataModel adapterDataModel;
-
-    public PresenterImpl(ViewModel model, DataManager manager) {
-        this.viewModel = model;
-        this.dataManager = manager;
+    public PresenterImpl(View model, Interactor interactor) {
+        this.view = model;
+        this.interactor = interactor;
     }
 
     @Override
     public void onCreate(Bundle bundle) {
-        adapterDataModel = new AdapterDataModel();
-        viewModel.initTextViews();
-        viewModel.initList(adapterDataModel, this);
-        viewModel.setTitle(dataManager.getSomeString());
-        loadData();
-    }
+        view.initTextViews();
+        view.initList(this);
+        view.setTitle(interactor.getTitle());
 
-    private void loadData() {
-        dataManager.getEntities(new OnDataManagerCallback<Entity>() {
-            @Override
-            public void onSuccess(List<Entity> list) {
-                adapterDataModel.setEntities(list);
-                viewModel.updateList();
-            }
-
-            @Override
-            public void onError(String errorCode) {
-                viewModel.openNextPage();
-            }
-        });
+        interactor.queryData();
     }
 
     @Override
-    public void onPause() {
-
+    public void handleOnResume() {
+        interactor.subscribe(this);
     }
 
     @Override
-    public void onClick(int position) {
-        String string = adapterDataModel.getTitleOnPosition(position);
-        viewModel.setTitle(string);
+    public void handleOnPause() {
+        interactor.unsubscribe(this);
+    }
+
+    @Override
+    public void onDataChanged(List<Entity> entities, int selectedEntityId) {
+        view.showData(new ModelAdapterImpl(entities, selectedEntityId));
+    }
+
+
+    @Override
+    public void onClick(int entryId) {
+        interactor.setSelectedEntity(entryId);
     }
 }
