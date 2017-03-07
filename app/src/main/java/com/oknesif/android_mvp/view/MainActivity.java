@@ -21,23 +21,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        View view = new ViewImpl(findViewById(R.id.root_view));
+        MainView view = new MainViewImpl(findViewById(R.id.root_view));
         Interactor interactor = new InteractorImpl(new DataSourceImpl());
         Router router = new RouterImpl(this);
-        presenter = new PresenterImpl(view, interactor, router);
+        presenter = new PresenterImpl(interactor, router);
 
-        presenter.onCreate(savedInstanceState);
+        presenter.onAttach(view);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.handleOnResume();
+        presenter.onResume();
     }
 
     @Override
     protected void onPause() {
-        presenter.handleOnPause();
+        presenter.onPause();
         super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        presenter.onDetach();
+        super.onDestroy();
     }
 }

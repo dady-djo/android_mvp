@@ -7,13 +7,13 @@ import android.widget.TextView;
 import com.oknesif.android_mvp.R;
 import com.oknesif.android_mvp.model.ModelAdapter;
 
-public class ViewImpl implements View {
+public class MainViewImpl implements MainView {
 
     private android.view.View rootView;
     private TextView someTextView;
     private RecyclerAdapter adapter;
 
-    public ViewImpl(android.view.View rootView) {
+    public MainViewImpl(android.view.View rootView) {
         this.rootView = rootView;
     }
 

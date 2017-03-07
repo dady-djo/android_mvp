@@ -2,7 +2,7 @@ package com.oknesif.android_mvp.view;
 
 import com.oknesif.android_mvp.model.ModelAdapter;
 
-public interface View {
+public interface MainView {
 
     void setTitle(String title);
 

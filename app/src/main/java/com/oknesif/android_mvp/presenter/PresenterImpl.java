@@ -1,47 +1,59 @@
 package com.oknesif.android_mvp.presenter;
 
-import android.os.Bundle;
-
 import com.oknesif.android_mvp.model.Interactor;
 import com.oknesif.android_mvp.model.ModelAdapterImpl;
 import com.oknesif.android_mvp.objects.Entity;
 import com.oknesif.android_mvp.router.Router;
+import com.oknesif.android_mvp.view.MainView;
+import com.oknesif.android_mvp.view.MainViewStub;
 import com.oknesif.android_mvp.view.OnEntityClickListener;
-import com.oknesif.android_mvp.view.View;
 
 import java.util.List;
 
 public class PresenterImpl implements Presenter, OnEntityClickListener, Interactor.DataSubscriber {
 
-    private View view;
-    private Interactor interactor;
+    private final Interactor interactor;
     private final Router router;
+    private MainView view;
 
-    public PresenterImpl(View model, Interactor interactor, Router router) {
-        this.view = model;
+    public PresenterImpl(Interactor interactor, Router router) {
         this.interactor = interactor;
         this.router = router;
     }
 
     @Override
-    public void onCreate(Bundle bundle) {
+    public void onAttach(MainView view) {
+        this.view = view;
+        initView();
+        queryData();
+    }
+
+    @Override
+    public void onDetach() {
+        view = new MainViewStub();
+    }
+
+    private void initView() {
         view.initTextViews();
         view.initList(this);
         view.setTitle(interactor.getTitle());
+    }
 
+    private void queryData() {
         interactor.queryData();
         view.showProgress(true);
     }
 
     @Override
-    public void handleOnResume() {
+    public void onResume() {
         interactor.subscribe(this);
     }
 
     @Override
-    public void handleOnPause() {
+    public void onPause() {
         interactor.unsubscribe(this);
     }
+
 
     @Override
     public void onDataChanged(List<Entity> entities, int selectedEntityId) {

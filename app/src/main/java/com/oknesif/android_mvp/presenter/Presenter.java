@@ -1,12 +1,14 @@
 package com.oknesif.android_mvp.presenter;
 
-import android.os.Bundle;
+import com.oknesif.android_mvp.view.MainView;
 
 public interface Presenter {
 
-    void onCreate(Bundle bundle);
+    void onAttach(MainView view);
 
-    void handleOnResume();
+    void onResume();
 
-    void handleOnPause();
+    void onPause();
+
+    void onDetach();
 }
