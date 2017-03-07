@@ -9,6 +9,8 @@ import com.oknesif.android_mvp.model.Interactor;
 import com.oknesif.android_mvp.model.InteractorImpl;
 import com.oknesif.android_mvp.presenter.Presenter;
 import com.oknesif.android_mvp.presenter.PresenterImpl;
+import com.oknesif.android_mvp.router.Router;
+import com.oknesif.android_mvp.router.RouterImpl;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,9 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        View view = new ViewImpl(this, findViewById(R.id.root_view));
+        View view = new ViewImpl(findViewById(R.id.root_view));
         Interactor interactor = new InteractorImpl(new DataSourceImpl());
-        presenter = new PresenterImpl(view, interactor);
+        Router router = new RouterImpl(this);
+        presenter = new PresenterImpl(view, interactor, router);
 
         presenter.onCreate(savedInstanceState);
     }

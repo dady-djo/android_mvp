@@ -10,7 +10,7 @@ public interface View {
 
     void initList(OnEntityClickListener listener);
 
-    void openNextPage();
-
     void showData(ModelAdapter modelAdapter);
+
+    void showProgress(boolean show);
 }

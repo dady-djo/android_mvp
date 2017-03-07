@@ -1,7 +1,5 @@
 package com.oknesif.android_mvp.view;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
@@ -15,10 +13,7 @@ public class ViewImpl implements View {
     private TextView someTextView;
     private RecyclerAdapter adapter;
 
-    private Activity activity;
-
-    public ViewImpl(Activity activity, android.view.View rootView) {
-        this.activity = activity;
+    public ViewImpl(android.view.View rootView) {
         this.rootView = rootView;
     }
 
@@ -42,13 +37,12 @@ public class ViewImpl implements View {
 
 
     @Override
-    public void openNextPage() {
-        Intent intent = new Intent(activity, MainActivity.class);
-        activity.startActivity(intent);
+    public void showData(final ModelAdapter modelAdapter) {
+        adapter.setData(modelAdapter);
     }
 
     @Override
-    public void showData(final ModelAdapter modelAdapter) {
-        adapter.setData(modelAdapter);
+    public void showProgress(boolean show) {
+        rootView.findViewById(R.id.progress).setVisibility(show? android.view.View.VISIBLE: android.view.View.GONE);
     }
 }

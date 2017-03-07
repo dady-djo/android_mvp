@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.oknesif.android_mvp.model.Interactor;
 import com.oknesif.android_mvp.model.ModelAdapterImpl;
 import com.oknesif.android_mvp.objects.Entity;
+import com.oknesif.android_mvp.router.Router;
 import com.oknesif.android_mvp.view.OnEntityClickListener;
 import com.oknesif.android_mvp.view.View;
 
@@ -14,10 +15,12 @@ public class PresenterImpl implements Presenter, OnEntityClickListener, Interact
 
     private View view;
     private Interactor interactor;
+    private final Router router;
 
-    public PresenterImpl(View model, Interactor interactor) {
+    public PresenterImpl(View model, Interactor interactor, Router router) {
         this.view = model;
         this.interactor = interactor;
+        this.router = router;
     }
 
     @Override
@@ -27,6 +30,7 @@ public class PresenterImpl implements Presenter, OnEntityClickListener, Interact
         view.setTitle(interactor.getTitle());
 
         interactor.queryData();
+        view.showProgress(true);
     }
 
     @Override
@@ -42,6 +46,7 @@ public class PresenterImpl implements Presenter, OnEntityClickListener, Interact
     @Override
     public void onDataChanged(List<Entity> entities, int selectedEntityId) {
         view.showData(new ModelAdapterImpl(entities, selectedEntityId));
+        view.showProgress(false);
     }
 
 
