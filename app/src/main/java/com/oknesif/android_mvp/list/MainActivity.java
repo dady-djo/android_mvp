@@ -1,4 +1,4 @@
-package com.oknesif.android_mvp.list.view;
+package com.oknesif.android_mvp.list;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import com.oknesif.android_mvp.list.presenter.Presenter;
 import com.oknesif.android_mvp.list.presenter.PresenterImpl;
 import com.oknesif.android_mvp.list.router.Router;
 import com.oknesif.android_mvp.list.router.RouterImpl;
+import com.oknesif.android_mvp.list.view.MainView;
+import com.oknesif.android_mvp.list.view.MainViewImpl;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.oknesif.android_mvp.person;
+package com.oknesif.android_mvp.details;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,16 +11,16 @@ import android.view.View;
 
 import com.oknesif.android_mvp.R;
 
-public class PersonActiviy extends AppCompatActivity {
+public class DetailsActiviy extends AppCompatActivity {
 
     public static final void start(Activity activity) {
-        activity.startActivity(new Intent(activity, PersonActiviy.class));
+        activity.startActivity(new Intent(activity, DetailsActiviy.class));
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_person);
+        setContentView(R.layout.activity_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
