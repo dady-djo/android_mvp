@@ -6,11 +6,11 @@ import com.oknesif.android_mvp.list.objects.Entity;
 import com.oknesif.android_mvp.list.router.Router;
 import com.oknesif.android_mvp.list.view.MainView;
 import com.oknesif.android_mvp.list.view.MainViewStub;
-import com.oknesif.android_mvp.list.view.OnEntityClickListener;
+import com.oknesif.android_mvp.list.view.OnItemClickListener;
 
 import java.util.List;
 
-public class PresenterImpl implements Presenter, OnEntityClickListener, Interactor.DataSubscriber {
+public class PresenterImpl implements Presenter, OnItemClickListener, Interactor.DataSubscriber {
 
     private final Interactor interactor;
     private final Router router;
@@ -34,8 +34,7 @@ public class PresenterImpl implements Presenter, OnEntityClickListener, Interact
     }
 
     private void initView() {
-        view.initTextViews();
-        view.initList(this);
+        view.initViews(this);
         view.setTitle(interactor.getTitle());
     }
 
@@ -63,7 +62,7 @@ public class PresenterImpl implements Presenter, OnEntityClickListener, Interact
 
 
     @Override
-    public void onClick(int entryId) {
-        interactor.setSelectedEntity(entryId);
+    public void onClick(int itemId) {
+        interactor.setSelectedEntity(itemId);
     }
 }

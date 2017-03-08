@@ -1,9 +1,8 @@
 package com.oknesif.android_mvp.list.router;
 
 import android.app.Activity;
-import android.content.Intent;
 
-import com.oknesif.android_mvp.list.MainActivity;
+import com.oknesif.android_mvp.details.DetailsActiviy;
 
 public class RouterImpl implements Router {
 
@@ -14,8 +13,7 @@ public class RouterImpl implements Router {
     }
 
     @Override
-    public void openNextPage() {
-        Intent intent = new Intent(activity, MainActivity.class);
-        activity.startActivity(intent);
+    public void openDetails() {
+        DetailsActiviy.start(activity);
     }
 }

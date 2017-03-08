@@ -6,9 +6,7 @@ public interface MainView {
 
     void setTitle(String title);
 
-    void initTextViews();
-
-    void initList(OnEntityClickListener listener);
+    void initViews(OnItemClickListener listener);
 
     void showData(ModelAdapter modelAdapter);
 

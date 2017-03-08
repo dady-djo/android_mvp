@@ -13,9 +13,9 @@ import com.oknesif.android_mvp.list.model.ModelAdapter;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.TitleHolder> {
 
     private ModelAdapter model;
-    private OnEntityClickListener listener;
+    private OnItemClickListener listener;
 
-    public RecyclerAdapter(OnEntityClickListener listener) {
+    public RecyclerAdapter(OnItemClickListener listener) {
         setHasStableIds(true);
         this.listener = listener;
     }

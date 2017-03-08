@@ -23,18 +23,13 @@ public class MainViewImpl implements MainView {
     }
 
     @Override
-    public void initTextViews() {
+    public void initViews(OnItemClickListener listener) {
         someTextView = (TextView) rootView.findViewById(R.id.txt_some);
-    }
-
-    @Override
-    public void initList(OnEntityClickListener listener) {
         RecyclerView recycler = (RecyclerView) rootView.findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
         adapter = new RecyclerAdapter(listener);
         recycler.setAdapter(adapter);
     }
-
 
     @Override
     public void showData(final ModelAdapter modelAdapter) {
@@ -43,6 +38,6 @@ public class MainViewImpl implements MainView {
 
     @Override
     public void showProgress(boolean show) {
-        rootView.findViewById(R.id.progress).setVisibility(show? android.view.View.VISIBLE: android.view.View.GONE);
+        rootView.findViewById(R.id.progress).setVisibility(show ? android.view.View.VISIBLE : android.view.View.GONE);
     }
 }
