@@ -62,7 +62,12 @@ public class PresenterImpl implements Presenter, OnItemClickListener, Interactor
 
 
     @Override
-    public void onClick(int itemId) {
+    public void onItemClick(int itemId) {
         interactor.setSelectedEntity(itemId);
+    }
+
+    @Override
+    public void onButtonClick(int itemId) {
+        router.openDetails(itemId);
     }
 }

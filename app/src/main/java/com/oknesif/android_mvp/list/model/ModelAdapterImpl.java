@@ -34,6 +34,11 @@ public class ModelAdapterImpl implements ModelAdapter {
         return getEntity(position).getId();
     }
 
+    @Override
+    public String getButtonText(int position) {
+        return "id = " + getEntity(position).getId();
+    }
+
     private Entity getEntity(int position) {
         return entities.get(position);
     }

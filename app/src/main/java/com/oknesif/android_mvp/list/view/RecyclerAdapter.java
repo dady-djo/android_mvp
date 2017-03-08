@@ -35,6 +35,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.TitleH
     public void onBindViewHolder(TitleHolder holder, int position) {
         holder.label.setText(model.getLabel(position));
         holder.label.setTextColor(model.isSelected(position) ? Color.GREEN : Color.BLACK);
+        holder.button.setText(model.getButtonText(position));
     }
 
     @Override
@@ -49,20 +50,25 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.TitleH
 
     class TitleHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView label;
+        TextView button;
 
         public TitleHolder(View itemView) {
             super(itemView);
             label = (TextView) itemView.findViewById(R.id.tvLabel);
+            button = (TextView) itemView.findViewById(R.id.button);
             itemView.setOnClickListener(this);
+            button.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            if (position != RecyclerView.NO_POSITION && listener != null) {
-                listener.onClick(model.getId(position));
-            }
+            if (position == RecyclerView.NO_POSITION || listener == null) return;
+
+            if (v.getId() == R.id.button)
+                listener.onButtonClick(model.getId(position));
+            else
+                listener.onItemClick(model.getId(position));
         }
     }
-
 }

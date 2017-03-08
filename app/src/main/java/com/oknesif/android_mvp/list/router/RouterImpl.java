@@ -13,7 +13,7 @@ public class RouterImpl implements Router {
     }
 
     @Override
-    public void openDetails() {
+    public void openDetails(int itemId) {
         DetailsActiviy.start(activity);
     }
 }

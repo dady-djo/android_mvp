@@ -60,5 +60,4 @@ public class InteractorImpl implements Interactor {
         return "Some Title";
     }
 
-
 }

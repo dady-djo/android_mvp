@@ -9,4 +9,6 @@ public interface ModelAdapter {
     boolean isSelected(int position);
 
     int getId(int position);
+
+    String getButtonText(int position);
 }
