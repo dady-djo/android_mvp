@@ -1,8 +1,8 @@
-package com.oknesif.android_mvp.model;
+package com.oknesif.android_mvp.list.model;
 
 import android.os.AsyncTask;
 
-import com.oknesif.android_mvp.objects.Entity;
+import com.oknesif.android_mvp.list.objects.Entity;
 
 import java.util.ArrayList;
 import java.util.List;

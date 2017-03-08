@@ -1,4 +1,4 @@
-package com.oknesif.android_mvp.objects;
+package com.oknesif.android_mvp.list.objects;
 
 public class Entity {
     private final int id;

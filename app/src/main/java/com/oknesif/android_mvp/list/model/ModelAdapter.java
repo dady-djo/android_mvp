@@ -1,4 +1,4 @@
-package com.oknesif.android_mvp.model;
+package com.oknesif.android_mvp.list.model;
 
 public interface ModelAdapter {
 

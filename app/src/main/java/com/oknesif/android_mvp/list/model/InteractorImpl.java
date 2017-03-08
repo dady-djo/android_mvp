@@ -1,6 +1,6 @@
-package com.oknesif.android_mvp.model;
+package com.oknesif.android_mvp.list.model;
 
-import com.oknesif.android_mvp.objects.Entity;
+import com.oknesif.android_mvp.list.objects.Entity;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

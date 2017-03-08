@@ -1,12 +1,12 @@
-package com.oknesif.android_mvp.presenter;
+package com.oknesif.android_mvp.list.presenter;
 
-import com.oknesif.android_mvp.model.Interactor;
-import com.oknesif.android_mvp.model.ModelAdapterImpl;
-import com.oknesif.android_mvp.objects.Entity;
-import com.oknesif.android_mvp.router.Router;
-import com.oknesif.android_mvp.view.MainView;
-import com.oknesif.android_mvp.view.MainViewStub;
-import com.oknesif.android_mvp.view.OnEntityClickListener;
+import com.oknesif.android_mvp.list.model.Interactor;
+import com.oknesif.android_mvp.list.model.ModelAdapterImpl;
+import com.oknesif.android_mvp.list.objects.Entity;
+import com.oknesif.android_mvp.list.router.Router;
+import com.oknesif.android_mvp.list.view.MainView;
+import com.oknesif.android_mvp.list.view.MainViewStub;
+import com.oknesif.android_mvp.list.view.OnEntityClickListener;
 
 import java.util.List;
 

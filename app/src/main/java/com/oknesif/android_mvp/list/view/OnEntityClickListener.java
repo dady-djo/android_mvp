@@ -1,4 +1,4 @@
-package com.oknesif.android_mvp.view;
+package com.oknesif.android_mvp.list.view;
 
 public interface OnEntityClickListener {
     void onClick(int entryId);

@@ -1,4 +1,4 @@
-package com.oknesif.android_mvp.router;
+package com.oknesif.android_mvp.list.router;
 
 
 public interface Router {

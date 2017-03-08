@@ -1,6 +1,6 @@
-package com.oknesif.android_mvp.view;
+package com.oknesif.android_mvp.list.view;
 
-import com.oknesif.android_mvp.model.ModelAdapter;
+import com.oknesif.android_mvp.list.model.ModelAdapter;
 
 public interface MainView {
 

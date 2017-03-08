@@ -1,6 +1,6 @@
-package com.oknesif.android_mvp.presenter;
+package com.oknesif.android_mvp.list.presenter;
 
-import com.oknesif.android_mvp.view.MainView;
+import com.oknesif.android_mvp.list.view.MainView;
 
 public interface Presenter {
 
